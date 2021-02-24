@@ -1,0 +1,21 @@
+﻿syntax = "proto3";
+option csharp_namespace = "grpcCrud";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+service GrpcServ{
+
+}
+message EmptyMsg{
+}
+message RegMsg{
+	string Uname = 1;
+	string Pass = 2;
+}
+message GeneralResponse{
+	bool Success = 1;
+	oneof Result{
+		string Error = 2;
+		EmptyMsg Empty = 3;
+	}
+}
